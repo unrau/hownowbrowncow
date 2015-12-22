@@ -14,4 +14,8 @@
  *= require_self
  */
 
-@import url("application.scss")
+@import url("reset.css");
+@import url("application.sass");
+
+@import url("home.sass");
+@import url("posts.sass");
