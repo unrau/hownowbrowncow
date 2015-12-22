@@ -1,0 +1,22 @@
+!!!
+%html
+  
+  %head
+    %title How Now Brown Cow
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+
+    %header
+      %h2 How Now Brown Cow
+      %nav
+        %ul
+          %li
+            %a{ :href => "/" }= "Home"
+          %li
+            %a{ :href => "/posts/" }= "Posts"
+
+    #content-wrapper
+      = yield

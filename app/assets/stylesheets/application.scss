@@ -1,2 +1,22 @@
-// Place all universal styles for the application here.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Application-wide universal styles:
+// BASE, CLOBAL, HEADER, NAV, FOOTER
+
+
+
+
+// HEADER STYLES
+
+header {
+  nav {
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        list-style-type: none;
+        padding: 10px;
+      }
+    }
+  }
+}
