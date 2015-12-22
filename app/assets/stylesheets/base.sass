@@ -6,7 +6,44 @@
 html, body
   font-family: "Josefin Sans", sans-serif
   font-weight: 400
+  font-size: 17px
+  line-height: 20px
 
 h1, h2, h3, h4, h5, h6
   font-family: "Amaranth", serif
   font-weight: 700
+  margin: 10px 0 20px 0
+
+h1
+  @include heading-size($h1-size)
+
+h2
+  @include heading-size($h2-size)
+
+h3
+  @include heading-size($h3-size)
+
+h4
+  @include heading-size($h4-size)
+
+h5
+  @include heading-size($h5-size)
+
+h6
+  @include heading-size($h6-size)
+
+p
+  margin: 10px 0 25px 0
+
+a, a:link
+  text-decoration: none
+
+blockquote
+  margin: 20px 40px
+  padding: 20px 30px
+  background-color: $blockquote-bg-col
+  border-bottom: solid 5px $blockquote-border-col
+
+hr
+  border-top: solid 5px rgba(0,0,0,0.1)
+  margin: 40px 40px
