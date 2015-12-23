@@ -4,7 +4,7 @@
 // Global styles
 
 body
-  background-color: $col-milk
+  background-color: $col-brown-dark
 
 #wrapper
   width: $content-width-large
@@ -13,8 +13,12 @@ body
   @media #{$break-small}
     width: auto
 
-#content-container
-  padding: 20px $content-side-margins
+#content
+  background-color: $col-milk
+  @include full-width
+
+  #content-container
+    padding: 20px $content-side-margins
 
 .cursive
   font-family: "Dancing Script"
