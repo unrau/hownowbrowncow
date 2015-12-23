@@ -13,8 +13,8 @@
   padding-left: 9999px
   padding-right: 9999px
 
-@mixin background-image($file, $type, $width, $height, $positionX: left, $positionY: top, $background-repeat: no-repeat)
-  background-image: image-url($file + '.' + $type)
+@mixin background-image($file, $width, $height, $positionX: left, $positionY: top, $background-repeat: no-repeat)
+  background-image: image-url($file)
   background-size: $width $height
   width: $width
   height: $height
