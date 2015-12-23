@@ -13,11 +13,30 @@ header
   #hnbc-title-container, #cmc-container
     display: inline-block
 
+    @media #{$break-small}
+      display: block
+
+  #hnbc-title-container
+    @media #{$break-small}
+      text-align: center
+
+    img#hnbc-title
+      width: 424px
+      height: auto
+
+      @media #{$break-small}
+        width: auto
+        max-width: 424px
+
   #cmc-container
     margin-left: 20px
     position: relative
     top: 50%
     transform: translateY(-20%)
+
+    @media #{$break-small}
+      margin: 20px 0 0 0
+      text-align: center
 
   span.by-the
     font-family: serif
@@ -34,10 +53,6 @@ header
     &:hover
       color: $col-custard-light
 
-  img#hnbc-title
-    height: 43px
-    width: auto
-
 
 // Styles for the Sub-Header
 
@@ -47,6 +62,9 @@ header
 
   #sub-header-container
     padding: 20px $content-side-margins
+
+    @media #{$break-small}
+      text-align: center
 
     p.sub-header
       letter-spacing: 0.025em
@@ -61,6 +79,9 @@ nav
 
   #nav-container
     padding: 12px $content-side-margins
+
+    @media #{$break-small}
+      text-align: center
 
   ul
     padding: 0
