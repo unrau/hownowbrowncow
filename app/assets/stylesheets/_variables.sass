@@ -18,7 +18,10 @@ $blockquote-bg-col:         rgba(0,0,0,0.05)
 $blockquote-border-col:     rgba(0,0,0,0.1)
 
 $content-width-large:    800px
+$content-width-small:    450px
 $break-small: "(max-width: #{$content-width-large - 1px})"
+$break-small-not-tiny: "(min-width: #{$content-width-small}) and (max-width: #{$content-width-large - 1px})"
+$break-tiny: "(max-width: #{$content-width-small - 1px})"
 
 $content-side-margins:   15px
 
