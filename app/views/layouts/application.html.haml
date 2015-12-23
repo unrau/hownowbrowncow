@@ -14,17 +14,18 @@
       %header
         #header-container
           #hnbc-title-container
-            %img#hnbc-title{ :src => "/assets/hnbc-title.png"}
+            = image_tag "hnbc-title.png", :id => "hnbc-title"
           #cmc-container
             %span.by-the by the
             %br
-            %span.cmc Chocolate Milk Conneseur
+            %a{ :href => "#", :class => "cmc"} Chocolate Milk Conneseur
 
       #sub-header
         #sub-header-container
-          %span.col-brown-ale Chocolate Milk
-          %span.col-brown-cream Reviews & Recipes, and the search for the
-          %span.col-brown-pearl One True Chocolate Milk
+          %p.sub-header
+            %span.col-brown-ale Chocolate Milk
+            %span.col-brown-cream Reviews & Recipes, and the search for the
+            %span.col-brown-pearl One True Chocolate Milk
 
       %nav
         #nav-container
@@ -32,7 +33,14 @@
             %li
               %a{ :href => "/" } Home
             %li
-              %a{ :href => "/posts/" } Posts
+              %a{ :href => "#" } REVIEWS
+            %li
+              %a{ :href => "#" } RECIPIES
+            %li
+              %a{ :href => "#" } ★ CHOC’O’METER
+            %li
+              %a{ :href => "#" } About & Contact
+
       #drip
 
       #content-container

@@ -22,11 +22,14 @@ header
     font-size: 13px
     color: $col-milk
 
-  span.cmc
+  a.cmc
     font-family: "Dancing Script", cursive
     font-weight: 400
     font-size: 20px
     color: $col-custard
+
+    &:hover
+      color: $col-custard-light
 
   img#hnbc-title
     height: 43px
@@ -41,6 +44,10 @@ header
 
   #sub-header-container
     padding: 20px $content-side-margins
+
+    p.sub-header
+      letter-spacing: 0.025em
+      margin: 0
 
 
 // Styles for the navigation
@@ -63,9 +70,14 @@ nav
 
       a
         font-family: "Amaranth"
-        font-size: 20px
+        font-size: 18px
         font-weight: 400
         color: $col-custard
+
+        &:hover
+          color: $col-custard-light
+
+
 // THE DRIP!!!
 
 #drip
