@@ -1,19 +1,68 @@
 @import "variables.sass"
 @import "mixins.sass"
 
-// Styles for the Header & Navigation
+// Styles for the Header
 
 header
+  background-color: $col-brown-dark
+  @include full-width
 
-  h2
+  #header-container
+    padding: 30px 15px
 
-  nav
+  #hnbc-title-container, #cmc-container
+    display: inline-block
 
-    ul
-      padding: 0
-      margin: 0
+  #cmc-container
+    margin-left: 20px
 
-      li
-        display: inline-block
-        list-style-type: none
-        padding: 10px
+  span.by-the
+    font-family: serif
+    font-weight: 400
+    font-size: 13px
+    color: $col-milk
+
+  span.cmc
+    font-family: "Dancing Script", cursive
+    font-weight: 400
+    font-size: 20px
+    color: $col-custard
+
+  img#hnbc-title
+    height: 43px
+    width: auto
+
+
+// Styles for the Sub-Header
+
+#sub-header
+  background-color: $col-brown-red
+  @include full-width
+
+  #sub-header-container
+    padding: 20px 15px
+
+
+// Styles for the navigation
+
+nav
+  background-color: $col-brown
+  @include full-width
+
+  #nav-container
+    padding: 12px 15px
+
+  ul
+    padding: 0
+    margin: 0
+
+    li
+      display: inline-block
+      list-style-type: none
+      padding: 10px 20px 10px 0
+
+      a
+        font-family: "Amaranth"
+        font-size: 20px
+        font-weight: 400
+        color: $col-custard

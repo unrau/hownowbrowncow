@@ -3,20 +3,36 @@
 
   %head
     %title How Now Brown Cow
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   %body
 
-    %header
-      %h2 How Now Brown Cow
-      %nav
-        %ul
-          %li
-            %a{ :href => "/" } Home
-          %li
-            %a{ :href => "/posts/" } Posts
+    #wrapper
 
-    #content-wrapper
-      = yield
+      %header
+        #header-container
+          #hnbc-title-container
+            %img#hnbc-title{ :src => "/assets/hnbc-title.png"}
+          #cmc-container
+            %span.by-the by the
+            %br
+            %span.cmc Chocolate Milk Conneseur
+
+      #sub-header
+        #sub-header-container
+          %span.col-brown-ale Chocolate Milk
+          %span.col-brown-cream Reviews & Recipes, and the search for the
+          %span.col-brown-pearl One True Chocolate Milk
+
+      %nav
+        #nav-container
+          %ul
+            %li
+              %a{ :href => "/" } Home
+            %li
+              %a{ :href => "/posts/" } Posts
+
+      #content-container
+        = yield
