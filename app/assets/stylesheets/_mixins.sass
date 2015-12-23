@@ -4,3 +4,11 @@
 @mixin heading-size($size)
   font-size: $size
   line-height: $size + 4px
+
+@mixin full-width
+  // Enable background of element to extend to full-width
+  // Not suitable for monitors the size of Saturn
+  margin-left: -9999px
+  margin-right: -9999px
+  padding-left: 9999px
+  padding-right: 9999px
