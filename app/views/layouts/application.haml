@@ -16,11 +16,13 @@
       %header
         #header-container
           #hnbc-title-container
-            = image_tag "hnbc-title.png", :id => "hnbc-title"
+            = link_to "/", { :action => "index", :controller => "home" } do
+              = image_tag "hnbc-title.png", :id => "hnbc-title"
           #cmc-container
             %span.by-the by the
             %br
-            %a{ :href => "#", :class => "cmc"} Chocolate Milk Connoisseur
+            //%a{ :href => "#", :class => "cmc"} Chocolate Milk Connoisseur
+            = link_to "Chocolate Milk Connoisseur", { :action => "index", :controller => "about" }, :class => "cmc"
 
       #sub-header
         #sub-header-container
@@ -33,18 +35,23 @@
         #nav-container
           %ul
             %li
-              %a{ :href => "/" } Home
+              = link_to "Home", { :action => "index", :controller => "home" }
             %li
-              %a{ :href => "#" } REVIEWS
+              = link_to "REVIEWS", { :action => "index", :controller => "reviews" }
             %li
-              %a{ :href => "#" } RECIPIES
+              = link_to "RECIPES", { :action => "index", :controller => "recipes" }
             %li
-              %a{ :href => "#" } ★ CHOC’O’METER
+              = link_to "★ CHOC’O’METRE", { :action => "index", :controller => "chocometre" }
             %li
-              %a{ :href => "#" } About & Contact
+              = link_to "About & Contact", { :action => "index", :controller => "about" }
 
       #drip
 
       #content
         #content-container
           = yield
+
+      #footer
+        #footer-drip
+        #footer-container
+          %h3 Footer
