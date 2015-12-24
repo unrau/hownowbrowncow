@@ -1,0 +1,2 @@
+class ChocometreController < ApplicationController
+end

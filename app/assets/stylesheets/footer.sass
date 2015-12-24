@@ -1,0 +1,19 @@
+@import "variables.sass"
+@import "mixins.sass"
+
+// Styles for the Footer
+
+#footer
+  background-color: $col-brown-dark
+  @include full-width
+  color: $col-milk
+
+  #footer-container
+    padding: 10px $content-side-margins 30px $content-side-margins
+
+  #footer-drip
+    height: 76px
+    line-height: 0
+    background-color: $col-brown-dark
+    @include background-image("drip-footer.png", 1000px, 76px, left, top, repeat-x)
+    @include full-width
