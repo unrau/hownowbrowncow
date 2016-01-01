@@ -20,3 +20,18 @@
   height: $height
   background-position: $positionX $positionY
   background-repeat: $background-repeat
+
+@mixin top-inner-shadow($opacity: 0.5)
+  box-shadow: inset 0 20px 20px -20px rgba(0,0,0,$opacity)
+
+@mixin text-shadow-dark-brown
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.5)
+@mixin text-shadow-light-brown
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.3)
+@mixin text-shadow-white
+  text-shadow: 2px 2px 1px $col-brown-pearl
+
+@mixin hairline-border-top($colour)
+  border-top: 1px solid $colour
+  @media (-webkit-min-device-pixel-ratio: 2)
+    border-top-width: 0.5px

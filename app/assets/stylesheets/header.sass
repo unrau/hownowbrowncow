@@ -47,17 +47,21 @@ header
     font-weight: 400
     font-size: 13px
     color: $col-milk
+    @include text-shadow-dark-brown
 
   a.cmc
     font-family: "Dancing Script", cursive
     font-weight: 400
     font-size: 20px
+    @include text-shadow-dark-brown
 
 
 // Styles for the Sub-Header
 
 #sub-header
   background-color: $col-brown-red
+  @include top-inner-shadow(0.2)
+  @include hairline-border-top($col-subheader-border)
   @include full-width
 
   #sub-header-container
@@ -67,14 +71,17 @@ header
       text-align: center
 
     p.sub-header
-      letter-spacing: 0.025em
       margin: 0
+      letter-spacing: 0.025em
+      @include text-shadow-dark-brown
 
 
 // Styles for the navigation
 
 nav
   background-color: $col-brown
+  @include top-inner-shadow(0.2)
+  @include hairline-border-top($col-nav-border)
   @include full-width
 
   #nav-container
@@ -96,6 +103,7 @@ nav
         font-family: "Amaranth"
         font-size: 18px
         font-weight: 400
+        @include text-shadow-light-brown
 
 
 // THE DRIP!!!
