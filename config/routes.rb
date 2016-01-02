@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # Post Routes
   #   get 'products/:id' => 'catalog#view'
-  get 'reviews'     => 'reviews#index'
+  #   get 'reviews'     => 'reviews#index'
   get 'recipes'     => 'recipes#index'
   get 'chocometre'  => 'chocometre#index'
   get 'about'       => 'about#index'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :reviews
 
   # Example resource route with options:
   #   resources :products do
