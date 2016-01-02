@@ -6,4 +6,9 @@
 
 = link_to 'Edit', { :action => "edit", :controller => "reviews"}
 %br
+= link_to 'Delete', review_path(@review),
+                    method: :delete,
+                    data: { confirm: 'Delete this review?' }
+%br
+%br
 = link_to 'Back to Reviews', { :action => "index", :controller => "reviews"}
