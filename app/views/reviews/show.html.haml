@@ -1,0 +1,9 @@
+%h3
+  = @review.title
+
+%p
+  = @review.text
+
+= link_to 'Edit', { :action => "edit", :controller => "reviews"}
+%br
+= link_to 'Back to Reviews', { :action => "index", :controller => "reviews"}

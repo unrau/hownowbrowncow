@@ -1,1 +1,8 @@
 %h3 Chocolate Milk Reviews
+
+- @reviews.each do |r|
+  %a{ :href => "/reviews/#{r.id}"}
+    %h4
+      = r.title
+  %p
+    = r.text

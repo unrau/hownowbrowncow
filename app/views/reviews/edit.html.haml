@@ -1,12 +1,12 @@
-%h3 Create a new Review
+%h3 Editing Review:
 
-= form_for :review, url: reviews_path do |f|
+= form_for :review, url: review_path(@review), method: :patch do |f|
 
   - if @review.errors.any?
     - @review.errors.full_messages.each do |msg|
       %h5.col-red
         = msg
-        
+
   %p
     = f.label :title
     %br
