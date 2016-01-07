@@ -33,6 +33,9 @@ gem 'bcrypt', '~> 3.1.10'
 # Use Puma as the app server
 gem 'puma'
 
+# Enable pagination
+gem 'will_paginate', '~> 3.1.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
