@@ -1,19 +1,29 @@
 = form_for @review do |f|
 
   - if @review.errors.any?
-    - @review.errors.full_messages.each do |msg|
-      %h5.col-red
-        = msg
+    %ul
+      - @review.errors.full_messages.each do |msg|
+        %li.col-red
+          %strong
+            = msg
 
-  %p
-    = f.label :title
-    %br
-    = f.text_field :title
-  %p
-    = f.label :text
-    %br
-    = f.text_area :text
-  %p
-    = f.submit
+  = f.label :title
+  %br
+  = f.text_field :title, class: "text_field"
+
+  %br
+  %br
+
+  = f.label :text
+  %br
+  = f.text_area :text, class: "text_field"
+
+  %br
+  %br
+
+  = f.submit "Create Review", class: "button"
+
+%br
+%br
 
 = link_to 'Cancel', { :action => "index", :controller => "reviews"}
