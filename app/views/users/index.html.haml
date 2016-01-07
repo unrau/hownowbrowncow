@@ -1,0 +1,17 @@
+#content-users
+
+  %h3 All Members
+
+  - if @users.count > 0
+
+    = will_paginate
+
+    - @users.each do |u|
+      .user
+        = show_gravatar u, 50
+        = link_to u.name, u
+
+    = will_paginate
+
+  - else
+    %h5 No users here yet

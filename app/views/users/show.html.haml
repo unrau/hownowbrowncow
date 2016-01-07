@@ -1,0 +1,22 @@
+#content-users
+
+  %h3
+    = @user.name
+
+  - if is_admin?(@user)
+    %span.weight-bold Admin
+    %br
+
+  = show_gravatar @user
+  %br
+  %a{ :href => "http://gravatar.com/emails", :target => "_blank" } Edit Gravatar
+
+  %br
+  %br
+
+  = link_to 'Edit Profile', { :action => "edit", :controller => "users"}
+  - if is_admin?(current_user) && !current_user?(@user)
+    %br
+    = link_to 'Delete Profile', user_path(@user),
+                        method: :delete,
+                        data: { confirm: 'Delete this member? This cannot be un-done.' }

@@ -1,0 +1,33 @@
+#content-login
+
+  %h3 Log In
+
+  = form_for(:session, url: login_path) do |f|
+
+    = f.label :email
+    %br
+    = f.email_field :email, class: 'form-control text_field'
+
+    %br
+    %br
+
+    = f.label :password
+    %br
+    = f.password_field :password, class: 'form-control text_field'
+
+    %br
+    %br
+
+    = f.label :remember_me, class: "checkbox" do
+      = f.check_box :remember_me
+      %span Remember me on this computer
+
+    %br
+    %br
+
+    = f.submit "Log In", class: "button"
+
+  %br
+  %br
+  Not a member yet?
+  = link_to 'Sign up here!', { :action => "new", :controller => "users"}

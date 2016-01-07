@@ -1,0 +1,41 @@
+= form_for(@user) do |f|
+
+  - if @user.errors.any?
+    %ul
+      - @user.errors.full_messages.each do |msg|
+        %li.col-red
+          %strong
+            = msg
+
+  = f.label :name
+  %br
+  = f.text_field :name, class: "text_field"
+
+  %br
+  %br
+
+  = f.label :email
+  %br
+  = f.email_field :email, class: "text_field"
+
+  %br
+  %br
+
+  = f.label :password
+  %br
+  = f.password_field :password, class: "text_field"
+
+  %br
+  %br
+
+  = f.label :password_confirmation, "Confirmation"
+  %br
+  = f.password_field :password_confirmation, class: "text_field"
+
+  %br
+  %br
+
+  = f.submit class: "button"
+
+%br
+%br

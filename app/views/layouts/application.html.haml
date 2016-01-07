@@ -30,19 +30,40 @@
             %span.col-brown-cream Reviews & Recipes, and the search for the
             %span.col-brown-pearl One True Chocolate Milk
 
+      - if logged_in?
+        #user-control
+          #user-control-container
+            %ul
+              %li
+                %span.col-milk.weight-bold
+                  = current_user.name
+              %li
+                = link_to "My Profile", current_user
+              %li
+                = link_to "Log out", logout_path, method: :delete
+              - if current_user.admin?
+                %li.weight-bold
+                  = link_to "Members", { :action => "index", :controller => "users"}
+                %li.weight-bold
+                  = link_to '+ Member', { :action => "new", :controller => "users" }
+                %li.weight-bold
+                  = link_to '+ Review', { :action => "new", :controller => "reviews" }
+                %li.weight-bold
+                  %a{ :href => "#" } + Recipe
+
       %nav
         #nav-container
           %ul
             %li
-              = link_to "Home", { :action => "index", :controller => "home" }
+              = link_to "Home", { :action => "index", :controller => "home" }, :data => { :'text' => 'Home' }
             %li
-              = link_to "REVIEWS", { :action => "index", :controller => "reviews" }
+              = link_to "★ REVIEWS", { :action => "index", :controller => "reviews" }, :data => { :'text' => '★ REVIEWS' }
             %li
-              = link_to "RECIPES", { :action => "index", :controller => "recipes" }
+              = link_to "★ RECIPES", { :action => "index", :controller => "recipes" }, :data => { :'text' => '★ RECIPES' }
             %li
-              = link_to "★ CHOC’O’METRE", { :action => "index", :controller => "chocometre" }
+              %a{ :href => "#", :'data-text' => 'Community' } Community
             %li
-              = link_to "About & Contact", { :action => "index", :controller => "about" }
+              = link_to "About & Contact", { :action => "index", :controller => "about" }, :data => { :'text' => 'About & Contact' }
 
       #drip
 
@@ -54,14 +75,13 @@
         #footer-drip
         #footer-container
           %h3 How Now Brown Cow
-          %a{ :href => "#" } Log In
-          %br
-          %a{ :href => "#" } Register
-          %br
-          %br
-          = link_to '+ Review', { :action => "new", :controller => "reviews"}
-          %br
-          %br
+          - if !logged_in?
+            = link_to 'Log In', login_path
+            %br
+            = link_to 'Register', { :action => "new", :controller => "users" }
+            %br
+            %br
+
           Copyright &copy;
           = Time.now.year
           Ceres Unrau
