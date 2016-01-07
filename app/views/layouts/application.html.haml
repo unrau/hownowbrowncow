@@ -94,3 +94,8 @@
           Copyright &copy;
           = Time.now.year
           Ceres Unrau
+
+          -# Show debug info in development environment
+          - if Rails.env.development?
+            %p
+              = debug(params)
