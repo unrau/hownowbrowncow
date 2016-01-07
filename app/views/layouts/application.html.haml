@@ -69,6 +69,15 @@
 
       #content
         #content-container
+          -# Show any flash alerts above the content
+          - flash.each do |message_type, message|
+            %div{ :class => "alert alert-#{message_type}" }
+              %h3
+                = message_type.capitalize
+              %p
+                = message
+
+          -# Render the content
           = yield
 
       #footer
