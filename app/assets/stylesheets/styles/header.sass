@@ -1,5 +1,3 @@
-@import "variables.sass"
-@import "mixins.sass"
 
 // Styles for the Header
 
@@ -55,6 +53,9 @@ header
     font-size: 20px
     @include text-shadow-dark-brown
 
+    &:hover
+      color: $col-custard-bright
+
 
 // Styles for the Sub-Header
 
@@ -76,6 +77,38 @@ header
       @include text-shadow-dark-brown
 
 
+// Styles for the User Control
+
+#user-control
+  background-color: $col-custard-dark
+  @include top-inner-shadow(0.2)
+  @include hairline-border-top($col-custard)
+  @include full-width
+
+  #user-control-container
+    padding: 10px $content-side-margins
+    color: $col-custard
+
+    @media #{$break-small}
+      text-align: center
+
+    ul
+      margin: 0
+      padding: 0
+
+      li
+        list-style-type: none
+        display: inline-block
+        margin-right: 20px
+        @include text-shadow-light-brown
+
+        a, a:link
+          color: $col-custard-bright
+          line-height: 40px
+          &:hover
+            color: $col-milk
+
+
 // Styles for the navigation
 
 nav
@@ -83,6 +116,8 @@ nav
   @include top-inner-shadow(0.2)
   @include hairline-border-top($col-nav-border)
   @include full-width
+  position: relative
+  z-index: 1
 
   #nav-container
     padding: 12px $content-side-margins
@@ -103,7 +138,24 @@ nav
         font-family: "Amaranth"
         font-size: 18px
         font-weight: 400
-        @include text-shadow-light-brown
+        @include linear-gradient($col-custard,$col-custard-bright)
+        @include clip-text
+        position: relative
+        z-index: 100
+
+        &:after
+          background: none
+          content: attr(data-text)
+          position: absolute
+          left: 0
+          top: 0
+          z-index: -1
+          @include text-shadow-light-brown
+          white-space: nowrap
+
+        &:hover
+          text-fill-color: $col-custard-bright
+          -webkit-text-fill-color: $col-custard-bright
 
 
 // THE DRIP!!!
