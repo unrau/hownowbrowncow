@@ -1,13 +1,15 @@
-%h3 Chocolate Milk Reviews
+#content-reviews
 
-- if @reviews.count > 0
+  %h3 Chocolate Milk Reviews
 
-  - @reviews.each do |r|
-    %a{ :href => "/reviews/#{r.id}"}
-      %h4
-        = r.title
-    %p
-      = r.text
+  - if @reviews.count > 0
 
-- else
-  %h5 No reviews here yet
+    - @reviews.each do |r|
+      %a{ :href => "/reviews/#{r.id}"}
+        %h4
+          = r.title
+      %p
+        = r.text
+
+  - else
+    %h5 No reviews here yet
