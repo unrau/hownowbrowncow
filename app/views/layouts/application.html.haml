@@ -61,8 +61,6 @@
             %li
               = link_to "★ RECIPES", { :action => "index", :controller => "recipes" }, :data => { :'text' => '★ RECIPES' }
             %li
-              %a{ :href => "#", :'data-text' => 'Community' } Community
-            %li
               = link_to "About & Contact", { :action => "index", :controller => "about" }, :data => { :'text' => 'About & Contact' }
 
       #drip
@@ -84,12 +82,6 @@
         #footer-drip
         #footer-container
           %h3 How Now Brown Cow
-          - if !logged_in?
-            = link_to 'Log In', login_path
-            %br
-            = link_to 'Register', { :action => "new", :controller => "users" }
-            %br
-            %br
 
           Copyright &copy;
           = Time.now.year
