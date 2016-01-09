@@ -83,6 +83,16 @@
         #footer-container
           %h3 How Now Brown Cow
 
+          %ul
+            %li
+              = link_to "HOME", { :action => "index", :controller => "home" }
+            %li
+              = link_to "REVIEWS", { :action => "index", :controller => "reviews" }
+            %li
+              = link_to "RECIPES", { :action => "index", :controller => "recipes" }
+            %li
+              = link_to "ABOUT & CONTACT", { :action => "index", :controller => "about" }
+
           Copyright &copy;
           = Time.now.year
           Ceres Unrau
