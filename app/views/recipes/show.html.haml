@@ -1,0 +1,19 @@
+
+- provide(:title, @recipe.title)
+
+#content-recipes
+
+  %h3
+    = @recipe.title
+
+  %p
+    = @recipe.text
+
+  = link_to 'Edit', { :action => "edit", :controller => "recipes"}
+  %br
+  = link_to 'Delete', review_path(@recipe),
+                      method: :delete,
+                      data: { confirm: 'Delete this recipe?' }
+  %br
+  %br
+  = link_to 'Back to Reviews', { :action => "index", :controller => "recipes"}

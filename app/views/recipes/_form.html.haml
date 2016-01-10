@@ -1,0 +1,29 @@
+= form_for @recipe do |f|
+
+  - if @recipe.errors.any?
+    %ul
+      - @recipe.errors.full_messages.each do |msg|
+        %li.col-red
+          %strong
+            = msg
+
+  = f.label :title
+  %br
+  = f.text_field :title, class: "text_field"
+
+  %br
+  %br
+
+  = f.label :text
+  %br
+  = f.text_area :text, class: "text_field"
+
+  %br
+  %br
+
+  = f.submit "Create Review", class: "button"
+
+%br
+%br
+
+= link_to 'Cancel', { :action => "index", :controller => "recipes"}
