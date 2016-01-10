@@ -2,6 +2,7 @@
 %html
 
   %head
+
     %title How Now Brown Cow
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
@@ -13,92 +14,8 @@
 
     #wrapper
 
-      %header
-        #header-container
-          #hnbc-title-container
-            = link_to "/", { :action => "index", :controller => "home" } do
-              = image_tag "hnbc-title.png", :id => "hnbc-title"
-          #cmc-container
-            %span.by-the from the
-            %br
-            = link_to "Chocolate Milk Connoisseur", { :action => "index", :controller => "about" }, :class => "cmc"
+      = render 'layouts/header'
 
-      #sub-header
-        #sub-header-container
-          %p.sub-header
-            %strong
-              %span.col-brown-ale CHOCOLATE MILK
-              %span.col-brown-cream Reviews & Recipes, and the search for the
-              %span.col-brown-pearl One True Chocolate Milk
+      = render 'layouts/content'
 
-      - if logged_in?
-        #user-control
-          #user-control-container
-            %ul
-              %li
-                %span.col-milk.weight-bold
-                  = current_user.name
-              %li
-                = link_to "My Profile", current_user
-              %li
-                = link_to "Log out", logout_path, method: :delete
-              - if current_user.admin?
-                %li.weight-bold
-                  = link_to "Members", { :action => "index", :controller => "users"}
-                %li.weight-bold
-                  = link_to '+ Member', { :action => "new", :controller => "users" }
-                %li.weight-bold
-                  = link_to '+ Review', { :action => "new", :controller => "reviews" }
-                %li.weight-bold
-                  %a{ :href => "#" } + Recipe
-
-      %nav
-        #nav-container
-          %ul
-            %li
-              = link_to "Home", { :action => "index", :controller => "home" }, :data => { :'text' => 'Home' }
-            %li
-              = link_to "★ REVIEWS", { :action => "index", :controller => "reviews" }, :data => { :'text' => '★ REVIEWS' }
-            %li
-              = link_to "★ RECIPES", { :action => "index", :controller => "recipes" }, :data => { :'text' => '★ RECIPES' }
-            %li
-              = link_to "About & Contact", { :action => "index", :controller => "about" }, :data => { :'text' => 'About & Contact' }
-
-      #drip
-
-      #content
-        #content-container
-          -# Show any flash alerts above the content
-          - flash.each do |message_type, message|
-            %div{ :class => "alert alert-#{message_type}" }
-              %h3
-                = message_type.capitalize
-              %p
-                = message
-
-          -# Render the content
-          = yield
-
-      #footer
-        #footer-drip
-        #footer-container
-          %h3 How Now Brown Cow
-
-          %ul
-            %li
-              = link_to "HOME", { :action => "index", :controller => "home" }
-            %li
-              = link_to "REVIEWS", { :action => "index", :controller => "reviews" }
-            %li
-              = link_to "RECIPES", { :action => "index", :controller => "recipes" }
-            %li
-              = link_to "ABOUT & CONTACT", { :action => "index", :controller => "about" }
-
-          Copyright &copy;
-          = Time.now.year
-          Ceres Unrau
-
-          -# Show debug info in development environment
-          - if Rails.env.development?
-            %p
-              = debug(params)
+      = render 'layouts/footer'
