@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   #   get 'reviews'     => 'reviews#index'
   get    'recipes'     => 'recipes#index'
-  get    'chocometre'  => 'chocometre#index'
   get    'about'       => 'about#index'
   get    'login'       => 'sessions#new'
   post   'login'       => 'sessions#create'
