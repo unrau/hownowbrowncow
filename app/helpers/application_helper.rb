@@ -1,8 +1,17 @@
 module ApplicationHelper
 
   def render_markdown(markdown)
-    filter = HTML::Pipeline::MarkdownFilter.new(markdown)
-    return filter.call.html_safe
+    context = {
+      :asset_root => "#{request.base_url}/images/"
+    }
+
+    pipeline = HTML::Pipeline.new [
+      HTML::Pipeline::MarkdownFilter,
+      HTML::Pipeline::EmojiFilter
+    ], context
+
+    result = pipeline.call markdown
+    return result[:output].to_s.html_safe
   end
 
 end
