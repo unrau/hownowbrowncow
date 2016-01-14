@@ -11,8 +11,6 @@
       %a{ :href => "/recipes/#{r.id}"}
         %h4
           = r.title
-      %p
-        = render_markdown(r.text)
 
   - else
     %h5 No recipes here yet

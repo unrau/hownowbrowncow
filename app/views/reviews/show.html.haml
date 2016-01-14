@@ -4,16 +4,17 @@
 #content-reviews
 
   %h3
+    = link_to 'Chocolate Milk Reviews', { :action => "index", :controller => "reviews"}
+
+  %h3
     = @review.title
 
   %p
     = render_markdown(@review.text)
 
-  = link_to 'Edit', { :action => "edit", :controller => "reviews"}
-  %br
-  = link_to 'Delete', review_path(@review),
-                      method: :delete,
-                      data: { confirm: 'Delete this review?' }
-  %br
-  %br
-  = link_to 'Back to Reviews', { :action => "index", :controller => "reviews"}
+  - if logged_in? && is_admin?(current_user)
+    = link_to 'Edit', { :action => "edit", :controller => "reviews"}
+    %br
+    = link_to 'Delete', review_path(@review),
+                        method: :delete,
+                        data: { confirm: 'Delete this review?' }

@@ -4,16 +4,17 @@
 #content-recipes
 
   %h3
+    = link_to 'Chocolate Milk Recipes', { :action => "index", :controller => "recipes"}
+
+  %h3
     = @recipe.title
 
   %p
     = render_markdown(@recipe.text)
 
-  = link_to 'Edit', { :action => "edit", :controller => "recipes"}
-  %br
-  = link_to 'Delete', review_path(@recipe),
-                      method: :delete,
-                      data: { confirm: 'Delete this recipe?' }
-  %br
-  %br
-  = link_to 'Back to Reviews', { :action => "index", :controller => "recipes"}
+  - if logged_in? && is_admin?(current_user)
+    = link_to 'Edit', { :action => "edit", :controller => "recipes"}
+    %br
+    = link_to 'Delete', review_path(@recipe),
+                        method: :delete,
+                        data: { confirm: 'Delete this recipe?' }
