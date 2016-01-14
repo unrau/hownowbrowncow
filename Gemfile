@@ -45,6 +45,7 @@ gem 'will_paginate', '~> 3.1.0'
 # Enable markdown rendering
 gem 'html-pipeline', '~> 2.2.2'
 gem 'github-markdown', '~> 0.6.9'
+gem 'gemoji', '~> 2.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
