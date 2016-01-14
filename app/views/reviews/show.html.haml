@@ -7,7 +7,7 @@
     = @review.title
 
   %p
-    = @review.text
+    = render_markdown(@review.text)
 
   = link_to 'Edit', { :action => "edit", :controller => "reviews"}
   %br

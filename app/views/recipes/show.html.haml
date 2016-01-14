@@ -7,7 +7,7 @@
     = @recipe.title
 
   %p
-    = @recipe.text
+    = render_markdown(@recipe.text)
 
   = link_to 'Edit', { :action => "edit", :controller => "recipes"}
   %br

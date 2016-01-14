@@ -12,7 +12,7 @@
         %h4
           = r.title
       %p
-        = r.text
+        = render_markdown(r.text)
 
   - else
     %h5 No reviews here yet
