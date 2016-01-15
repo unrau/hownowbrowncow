@@ -3,6 +3,12 @@
 
 #content-reviews
 
-  %h4 Editing Review:
+  %h4
+    Editing Review:
+    = @review.title
 
   = render 'form'
+
+  %br
+
+  = link_to 'Cancel', review_url, class: 'button'

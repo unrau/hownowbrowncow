@@ -3,6 +3,12 @@
 
 #content-recipies
 
-  %h4 Editing Recipe:
+  %h4
+    Editing Recipe:
+    = @recipe.title
 
   = render 'form'
+
+  %br
+
+  = link_to 'Cancel', recipe_url, class: 'button'
