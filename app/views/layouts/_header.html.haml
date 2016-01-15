@@ -3,6 +3,7 @@
   #header-container
     #hnbc-title-container
       = link_to "/", { :action => "index", :controller => "home" } do
+        = image_tag "logo.png", :id => "hnbc-logo"
         = image_tag "hnbc-title.png", :id => "hnbc-title"
     #cmc-container
       %span.by-the from the
