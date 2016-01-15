@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   # Post Routes
   #   get 'products/:id' => 'catalog#view'
   #   get 'reviews'     => 'reviews#index'
-  get    'recipes'     => 'recipes#index'
   get    'about'       => 'about#index'
   get    'login'       => 'sessions#new'
   post   'login'       => 'sessions#create'
