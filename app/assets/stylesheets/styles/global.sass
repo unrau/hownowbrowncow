@@ -92,13 +92,11 @@ h1, h2, h3, h4, h5, h6
     padding: 10px
 
 input.text_field
-  font-family: "Josefin Sans", sans-serif
-  font-weight: 400
-  font-size: 16px
-  padding: 10px
-  border: 1px solid rgba(0,0,0,0.15)
-  border-radius: 20px
-  width: 50%
+  @include text-field
+
+textarea.text_field
+  @include text-field
+  min-height: 200px
 
 .button
   font-family: "Amaranth", serif
