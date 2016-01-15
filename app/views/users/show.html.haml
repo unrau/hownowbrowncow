@@ -11,16 +11,18 @@
     %br
 
   = show_gravatar @user
-  %br
-  %br
+
+  %p
+
   %a{ :href => "http://gravatar.com/emails", :target => "_blank", :class => "button" } Edit Gravatar
 
-  %br
-  %br
+  %p
 
   = link_to 'Edit Profile', { :action => "edit", :controller => "users"}, class: 'button'
   - if is_admin?(current_user) && !current_user?(@user)
+
     %p
+    
     = link_to 'Delete Profile', user_path(@user),
                         method: :delete,
                         data: { confirm: 'Delete this member? This cannot be undone.' },

@@ -14,7 +14,9 @@
 
   - if logged_in? && is_admin?(current_user)
     = link_to 'Edit', { :action => "edit", :controller => "reviews"}, class: 'button'
+
     %p
+
     = link_to 'Delete', review_path(@review),
                         method: :delete,
                         data: { confirm: 'Delete this review? This cannot be undone.' },

@@ -8,25 +8,33 @@
             = msg
 
   = f.label :name
+
   %br
+
   = f.text_field :name, class: "text_field"
 
   %p
 
   = f.label :email
+
   %br
+
   = f.email_field :email, class: "text_field"
 
   %p
 
   = f.label :password
+
   %br
+
   = f.password_field :password, class: "text_field"
 
   %p
 
   = f.label :password_confirmation, "Confirmation"
+
   %br
+  
   = f.password_field :password_confirmation, class: "text_field"
 
   %p
