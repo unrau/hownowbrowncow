@@ -6,6 +6,7 @@ module ApplicationHelper
     }
 
     pipeline = HTML::Pipeline.new [
+      HTML::Pipeline::YoutubeFilter,
       HTML::Pipeline::MarkdownFilter,
       HTML::Pipeline::EmojiFilter
     ], context

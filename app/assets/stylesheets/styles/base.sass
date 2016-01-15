@@ -53,3 +53,16 @@ blockquote
 hr
   border-top: solid 5px rgba(0,0,0,0.1)
   margin: 40px 40px
+
+// Maintain 16:9 aspect ratio for youtube iframes
+div.youtube
+  position: relative
+  padding-bottom: 56.25%
+  padding-top: 25px
+  height: 0
+  iframe
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
