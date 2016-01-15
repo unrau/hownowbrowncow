@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def render_markdown(markdown)
     context = {
-      :asset_root => "#{request.base_url}/images/"
+      :asset_root => "#{request.base_url}/images/"  # public images path for EmojiFilter
     }
 
     pipeline = HTML::Pipeline.new [
