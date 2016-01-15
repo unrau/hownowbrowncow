@@ -15,7 +15,7 @@
   - if logged_in? && is_admin?(current_user)
     = link_to 'Edit', { :action => "edit", :controller => "recipes"}, class: 'button'
     %p
-    = link_to 'Delete', review_path(@recipe),
+    = link_to 'Delete', recipe_path(@recipe),
                         method: :delete,
                         data: { confirm: 'Delete this recipe?' },
                         class: 'button'
