@@ -4,6 +4,10 @@
 #content-users
 
   %h3 All Members
+  - if logged_in? && current_user.admin?
+    = link_to '+ Member', { :action => "new", :controller => "users" }, class: 'button'
+
+  %p
 
   - if @users.count > 0
 
