@@ -16,8 +16,12 @@
       color: $col-custard-bright
 
     ul
+      float: right
       margin: 0 0 20px 0
       padding: 0
+
+      @media #{$break-small}
+        float: none
 
       li
         display: inline-block
