@@ -11,19 +11,16 @@
   %br
   = f.text_field :title, class: "text_field"
 
-  %br
-  %br
+  %p
 
   = f.label :text
   %br
   = f.text_area :text, class: "text_field"
 
-  %br
-  %br
+  %p
 
   = f.submit class: "button"
 
 %br
-%br
 
-= link_to 'Cancel', { :action => "index", :controller => "recipes"}
+= link_to 'Cancel', { :action => "index", :controller => "recipes"}, class: 'button'
