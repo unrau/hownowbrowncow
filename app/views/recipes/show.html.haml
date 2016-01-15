@@ -17,5 +17,5 @@
     %p
     = link_to 'Delete', recipe_path(@recipe),
                         method: :delete,
-                        data: { confirm: 'Delete this recipe?' },
+                        data: { confirm: 'Delete this recipe? This cannot be undone.' },
                         class: 'button'
