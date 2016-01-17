@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Root Route
   root 'home#index'
 
-  # Post Routes
+  # Routes
   get    'about'       => 'about#index'
   get    'login'       => 'sessions#new'
   post   'login'       => 'sessions#create'
