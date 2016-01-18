@@ -9,6 +9,27 @@
   %h3
     = @review.title
 
+  .score
+    .score-number
+      = @review.creaminess
+    .score-label
+      %strong
+        Creaminess
+
+  .score
+    .score-number
+      = @review.sweetness
+    .score-label
+      %strong
+        Sweetness
+
+  .score
+    .score-number
+      = @review.richness
+    .score-label
+      %strong
+        Richness
+
   %p
     = render_markdown(@review.text)
 

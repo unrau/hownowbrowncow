@@ -98,6 +98,20 @@ textarea.text_field
   @include text-field
   min-height: 200px
 
+select
+  font-family: "Josefin Sans", sans-serif
+  font-weight: 700
+  font-size: 18px
+  color: $col-coal
+  background: rgba(0,0,0,0.1)
+  padding: 5px 10px 5px 12px
+  font-size: 16px
+  line-height: 1
+  border: 0
+  border-radius: 20px
+  height: 34px
+  -webkit-appearance: none
+
 .button
   font-family: "Amaranth", serif
   font-weight: 700
@@ -118,3 +132,18 @@ textarea.text_field
   width: 250px
   height: auto
   border-radius: 50%
+
+.score
+  display: inline-block
+  width: 150px
+  @include background-image("cow-sil.png", 100px, 65px, left, top, no-repeat)
+
+  .score-number
+    text-align: center
+    font-size: 22px
+    font-weight: 700
+    color: $col-milk
+    padding-top: 15px
+
+  .score-label
+    margin: 35px 0 0 5px

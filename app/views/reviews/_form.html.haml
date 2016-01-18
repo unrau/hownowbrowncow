@@ -8,17 +8,28 @@
             = msg
 
   = f.label :title
-
   %br
-
   = f.text_field :title, class: "text_field"
 
   %p
 
-  = f.label :text
+  = f.label :creaminess
+  = f.select :creaminess, options_for_select( 1..10, f.object.creaminess || 1 )
 
+  %p
+
+  = f.label :sweetness
+  = f.select :sweetness, options_for_select( 1..10, f.object.sweetness || 1 )
+
+  %p
+
+  = f.label :richness
+  = f.select :richness, options_for_select( 1..10, f.object.richness || 1 )
+
+  %p
+
+  = f.label :text
   %br
-  
   = f.text_area :text, class: "text_field"
 
   %p
