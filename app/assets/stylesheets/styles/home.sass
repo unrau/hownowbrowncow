@@ -7,15 +7,19 @@ img.twitter-avatar
   float: left
   margin-right: 10px
 
+.full-column
+  margin-bottom: $section-bottom-margin
+
 .half-column
   display: inline-block
   width: 49%
   vertical-align: top
+  margin-bottom: $section-bottom-margin
 
   @media #{$break-small-not-tiny}
     display: block
     width: 60%
-    margin: 0 auto
+    margin: 0 auto $section-bottom-margin auto
 
   @media #{$break-tiny}
     display: block
