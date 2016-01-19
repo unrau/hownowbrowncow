@@ -41,12 +41,14 @@
   #nav-container
     %ul
       %li
-        = link_to "Home", { :action => "index", :controller => "home" }, :data => { :'text' => 'Home' }
+        = link_to "HOME", { :action => "index", :controller => "home" }, :data => { :'text' => 'HOME' }
       %li
         = link_to "★ REVIEWS", { :action => "index", :controller => "reviews" }, :data => { :'text' => '★ REVIEWS' }
       %li
         = link_to "✓ RECIPES", { :action => "index", :controller => "recipes" }, :data => { :'text' => '✓ RECIPES' }
       %li
-        = link_to "About & Contact", { :action => "index", :controller => "about" }, :data => { :'text' => 'About & Contact' }
+        = link_to "ABOUT & CONTACT", { :action => "index", :controller => "about" }, :data => { :'text' => 'ABOUT & CONTACT' }
+      %li
+        = link_to "SUBSCRIBE", "http://eepurl.com/bNoWMv", :data => { :'text' => 'SUBSCRIBE'}
 
 #drip
