@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @tweets = tweets 5
+    @tweets = tweets 3
   end
 
 end
