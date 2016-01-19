@@ -47,6 +47,11 @@ gem 'html-pipeline', '~> 2.2.2'
 gem 'html-pipeline-youtube', '~> 0.1.2'
 gem 'github-markdown', '~> 0.6.9'
 gem 'gemoji', '~> 2.1.0'
+gem 'rinku'
+gem 'html-pipeline-hashtag'
+
+# Use Twitter for displaying and posting tweets
+gem 'twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

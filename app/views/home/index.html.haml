@@ -40,3 +40,7 @@
     Yours truly,
     %br
     %span.cursive The Chocolate Milk Connoisseur
+
+  - for tweet in @tweets do
+    %p
+      = render_twitter(tweet.text)

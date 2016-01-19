@@ -15,4 +15,20 @@ module ApplicationHelper
     return result[:output].to_s.html_safe
   end
 
+  def render_twitter(tweet)
+    context = {
+      :asset_root => "#{request.base_url}/images/",  # public images path for EmojiFilter
+      :tag_url => 'https://twitter.com/hashtag/%{tag}'  # Twitter hashtag URL
+    }
+
+    pipeline = HTML::Pipeline.new [
+      HTML::Pipeline::AutolinkFilter,
+      HTML::Pipeline::HashtagFilter,
+      HTML::Pipeline::EmojiFilter
+    ], context
+
+    result = pipeline.call tweet
+    return result[:output].to_s.html_safe
+  end
+
 end
