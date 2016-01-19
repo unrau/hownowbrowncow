@@ -15,9 +15,13 @@
       %h4 Subscribe:
 
       %p.subscription
-        = link_to 'Email Updates', 'http://eepurl.com/bNoWMv', { :class => 'button' }
+        %a{ :href => 'http://eepurl.com/bNoWMv', :class => %w(button sub-email) }
+          = fa_icon 'envelope'
+          Email Updates
       %p.subscription
-        = link_to 'You Tube Channel', '#', { :class => 'button' }
+        %a{ :href => '#', :class => %w(button sub-youtube) }
+          = fa_icon 'youtube-play'
+          YouTube Channel
 
   .half-column
     %h4 The latest tweets (moos?) from #{link_to 'How Now Brown Cow', 'https://twitter.com/CMConnoisseur'}:
