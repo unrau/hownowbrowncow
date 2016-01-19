@@ -13,4 +13,5 @@
 
   - for tweet in @tweets do
     %p
+      = image_tag "logo.png", :class => "twitter-avatar"
       = render_twitter(tweet.text)
