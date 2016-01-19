@@ -6,3 +6,17 @@ img.twitter-avatar
   height: auto
   float: left
   margin-right: 10px
+
+.half-column
+  display: inline-block
+  width: 49%
+  vertical-align: top
+
+  @media #{$break-small-not-tiny}
+    display: block
+    width: 60%
+    margin: 0 auto
+
+  @media #{$break-tiny}
+    display: block
+    width: 100%

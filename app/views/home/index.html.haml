@@ -9,9 +9,22 @@
 
   %p
 
-  %h4 The latest tweets (moos?) from #{link_to 'How Now Brown Cow', 'https://twitter.com/CMConnoisseur'}:
+  .half-column
 
-  - for tweet in @tweets do
-    %p
-      = image_tag "logo.png", :class => "twitter-avatar"
-      = render_twitter(tweet.text)
+    %center
+      %h4 Subscribe:
+
+      %p
+        = link_to 'Email Updates', '#', { :class => 'button' }
+      %p
+        = link_to 'You Tube Channel', '#', { :class => 'button' }
+
+  .half-column
+    %h4 The latest tweets (moos?) from #{link_to 'How Now Brown Cow', 'https://twitter.com/CMConnoisseur'}:
+
+    - for tweet in @tweets do
+      %p
+        = image_tag "logo.png", :class => "twitter-avatar"
+        = render_twitter(tweet.text)
+
+  .clearfix
