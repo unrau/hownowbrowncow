@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Specify Ruby version
-ruby "2.2.3"
+ruby '2.2.3'
 
 # Specify Rails version
 gem 'rails', '4.2.5'
@@ -64,7 +64,7 @@ group :development do
   gem 'spring'
 
   # Use Font-Awesome icons
-  gem "font-awesome-rails"
+  gem 'font-awesome-rails'
 end
 
 group :production do
