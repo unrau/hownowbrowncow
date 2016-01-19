@@ -25,8 +25,5 @@ module Hownowbrowncow
 
     # Precompile all PNG, JPG, JPEG, and GIF assets
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
-
-    # Do not initialize assets on precompile
-    config.assets.initialize_on_precompile = false
   end
 end
