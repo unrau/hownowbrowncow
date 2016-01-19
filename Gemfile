@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Specify Ruby version
 ruby "2.2.3"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Specify Rails version
 gem 'rails', '4.2.5'
 
 # Use postgresql as the database for Active Record
@@ -42,7 +42,7 @@ gem 'puma'
 # Enable pagination
 gem 'will_paginate', '~> 3.1.0'
 
-# Enable markdown rendering
+# Enable text filtering
 gem 'html-pipeline', '~> 2.2.2'
 gem 'html-pipeline-youtube', '~> 0.1.2'
 gem 'github-markdown', '~> 0.6.9'
@@ -53,12 +53,10 @@ gem 'html-pipeline-hashtag'
 # Use Twitter for displaying and posting tweets
 gem 'twitter'
 
-group :development, :test do
+group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-end
 
-group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
