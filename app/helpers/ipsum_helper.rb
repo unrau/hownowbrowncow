@@ -1,7 +1,7 @@
 module IpsumHelper
 
   def generate_ipsum(paragraphs, length, start_with_default = true)
-    # Generate HTML paragraphs of listed words chosen at random
+    # Generate HTML paragraphs from listed words chosen at random
     #
     # Valid lengths are the following strings:
     # 'short'
