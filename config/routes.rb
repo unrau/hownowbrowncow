@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # Routes
-  get    'about'       => 'about#index'
-  get    'login'       => 'sessions#new'
-  post   'login'       => 'sessions#create'
-  delete 'logout'      => 'sessions#destroy'
+  get    'about'                => 'about#index'
+  get    'chocolate-milk-ipsum' => 'ipsum#index'
+  get    'login'                => 'sessions#new'
+  post   'login'                => 'sessions#create'
+  delete 'logout'               => 'sessions#destroy'
 
   # Resource Routes (maps HTTP verbs to controller actions automatically):
   resources :users
