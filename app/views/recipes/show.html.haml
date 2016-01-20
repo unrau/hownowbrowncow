@@ -13,11 +13,11 @@
     = render_markdown(@recipe.text)
 
   - if logged_in? && is_admin?(current_user)
-    = link_to 'Edit', { :action => "edit", :controller => "recipes"}, class: 'button'
+    = link_to ("#{icon 'pencil'} Edit").html_safe, { :action => "edit", :controller => "recipes"}, class: 'button'
 
     %p
-    
-    = link_to 'Delete', recipe_path(@recipe),
+
+    = link_to ("#{icon 'remove'} Delete").html_safe, recipe_path(@recipe),
                         method: :delete,
                         data: { confirm: 'Delete this recipe? This cannot be undone.' },
                         class: 'button'

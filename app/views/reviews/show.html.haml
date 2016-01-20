@@ -37,11 +37,11 @@
     = render_markdown(@review.text)
 
   - if logged_in? && is_admin?(current_user)
-    = link_to 'Edit', { :action => "edit", :controller => "reviews"}, class: 'button'
+    = link_to ("#{icon 'pencil'} Edit").html_safe, { :action => "edit", :controller => "reviews"}, class: 'button'
 
     %p
 
-    = link_to 'Delete', review_path(@review),
+    = link_to ("#{icon 'remove'} Delete").html_safe, review_path(@review),
                         method: :delete,
                         data: { confirm: 'Delete this review? This cannot be undone.' },
                         class: 'button'

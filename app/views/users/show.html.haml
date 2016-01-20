@@ -14,16 +14,18 @@
 
   %p
 
-  %a{ :href => "http://gravatar.com/emails", :target => "_blank", :class => "button" } Edit Gravatar
+  %a{ :href => "http://gravatar.com/emails", :target => "_blank", :class => "button" }
+    = icon 'pencil'
+    Edit Gravatar
 
   %p
 
-  = link_to 'Edit Profile', { :action => "edit", :controller => "users"}, class: 'button'
+  = link_to ("#{icon 'pencil'} Edit Profile").html_safe, { :action => "edit", :controller => "users"}, class: 'button'
   - if is_admin?(current_user) && !current_user?(@user)
 
     %p
-    
-    = link_to 'Delete Profile', user_path(@user),
+
+    = link_to ("#{icon 'remove'} Delete Member").html_safe, user_path(@user),
                         method: :delete,
                         data: { confirm: 'Delete this member? This cannot be undone.' },
                         class: 'button'

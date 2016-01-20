@@ -24,29 +24,30 @@
       %ul
         %li
           %span.col-milk.weight-bold
+            = icon 'spoon'
             = current_user.name
         %li
-          = link_to "My Profile", current_user
+          = link_to ("#{icon 'sign-out'} Log Out").html_safe, logout_path, method: :delete
         %li
-          = link_to "Log out", logout_path, method: :delete
+          = link_to ("#{icon 'user'} My Profile").html_safe, current_user
         - if current_user.admin?
           %li.weight-bold
-            = link_to "Members", { :action => "index", :controller => "users"}
+            = link_to ("#{icon 'users'} Members").html_safe, { :action => "index", :controller => "users"}
           %li.weight-bold
-            = link_to '+ Review', { :action => "new", :controller => "reviews" }
+            = link_to ("#{icon 'plus-square-o'} Review").html_safe, { :action => "new", :controller => "reviews" }
           %li.weight-bold
-            = link_to '+ Recipe', { :action => "new", :controller => "recipes"}
+            = link_to ("#{icon 'plus-square-o'} Recipe").html_safe, { :action => "new", :controller => "recipes"}
 
 %nav
   #nav-container
     %ul
       %li
-        = link_to "HOME", { :action => "index", :controller => "home" }, :data => { :'text' => 'HOME' }
+        = link_to "HOME", { :action => "index", :controller => "home" }
       %li
-        = link_to "★ REVIEWS", { :action => "index", :controller => "reviews" }, :data => { :'text' => '★ REVIEWS' }
+        = link_to ("#{icon 'star'} REVIEWS").html_safe, { :action => "index", :controller => "reviews" }
       %li
-        = link_to "✓ RECIPES", { :action => "index", :controller => "recipes" }, :data => { :'text' => '✓ RECIPES' }
+        = link_to ("#{icon 'list-ol'} RECIPES").html_safe, { :action => "index", :controller => "recipes" }
       %li
-        = link_to "ABOUT & CONTACT", { :action => "index", :controller => "about" }, :data => { :'text' => 'ABOUT & CONTACT' }
+        = link_to "ABOUT & CONTACT", { :action => "index", :controller => "about" }
 
 #drip
