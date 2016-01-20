@@ -28,8 +28,9 @@ module IpsumHelper
       'tastes like'
     ]
 
+    # Set the minimum number of sentences per paragraph based on the length parameter
     length_min = 0
-    puts case length.downcase
+    case length.downcase
     when 'short'
       length_min = 2
     when 'medium'
@@ -50,13 +51,17 @@ module IpsumHelper
 
     p_count = 0
     for paragraph in (1..paragraphs)
-      num_sentences = length_min + Random.rand(length_min)
+      # Initialize a new paragraph
       par = ''
+
+      # Chose a random number of sentinces between the minimum and twice the minimum
+      num_sentences = length_min + Random.rand(length_min)
 
       s_count = 0
       for sentence in (1..num_sentences)
         w_count = 0
         for word in (1..Random.rand(3..20))
+          # Initialize a new word
           new_word = ''
 
           # A random word is selected that can sometimes be a rare word
@@ -69,7 +74,7 @@ module IpsumHelper
           # First word after the optional default text starts with a space and is not capitalized
           if p_count == 0 && s_count == 0 && w_count == 0 && start_with_default
             new_word = ' ' + new_word
-          # First word of a paragraph doesn't start with a space and is capitalized
+          # First word of a normal paragraph doesn't start with a space and is capitalized
           elsif p_count != 0 && s_count == 0 && w_count == 0
             new_word = new_word[0].upcase + new_word[1..-1]
           # First word of a sentence is capitalized
@@ -91,7 +96,7 @@ module IpsumHelper
           w_count += 1
         end
 
-        # Ensure sentences end with a period, replacing any ending commas
+        # Ensure the new sentence ends with a period, replacing any ending comma
         if par[-1] == ','
           par = par[0..-2] + '.'
         else
