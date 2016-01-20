@@ -4,7 +4,7 @@
 #content-reviews
 
   %h4
-    = link_to 'Chocolate Milk Reviews', { :action => "index", :controller => "reviews"}
+    = link_to ("#{icon 'star'} Chocolate Milk Reviews").html_safe, { :action => "index", :controller => "reviews"}
 
   %h3
     = @review.title

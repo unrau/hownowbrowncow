@@ -4,7 +4,7 @@
 #content-recipes
 
   %h4
-    = link_to 'Chocolate Milk Recipes', { :action => "index", :controller => "recipes"}
+    = link_to ("#{icon 'list-ol'} Chocolate Milk Recipes").html_safe, { :action => "index", :controller => "recipes"}
 
   %h3
     = @recipe.title
