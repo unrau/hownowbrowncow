@@ -1,0 +1,2 @@
+class IpsumController < ApplicationController
+end
