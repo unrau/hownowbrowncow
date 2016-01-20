@@ -144,26 +144,11 @@ nav
         font-family: "Amaranth"
         font-size: 18px
         font-weight: 400
-        @include linear-gradient($col-custard,$col-custard-bright)
-        @include clip-text
-        position: relative
-        z-index: 100
-
-        &:after
-          background: none
-          content: attr(data-text)
-          position: absolute
-          left: 0
-          top: 0
-          z-index: -1
-          text-shadow: 2px 3px 1px rgba(0,0,0,0.3)
-          white-space: nowrap
-          text-fill-color: transparent
-          -webkit-text-fill-color: transparent
+        color: $col-custard
+        text-shadow: 2px 2px 1px rgba(0,0,0,0.3)
 
         &:hover
-          text-fill-color: $col-custard-bright
-          -webkit-text-fill-color: $col-custard-bright
+          color: $col-custard-bright
 
 
 // THE DRIP!!!
