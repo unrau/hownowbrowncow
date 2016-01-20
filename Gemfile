@@ -53,6 +53,9 @@ gem 'html-pipeline-hashtag'
 # Use Twitter for displaying and posting tweets
 gem 'twitter'
 
+# Use Font-Awesome icons
+gem 'font-awesome-rails'
+
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -62,9 +65,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  # Use Font-Awesome icons
-  gem 'font-awesome-rails'
 end
 
 group :production do
