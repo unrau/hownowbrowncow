@@ -53,6 +53,9 @@ gem 'html-pipeline-hashtag'
 # Use Twitter for displaying and posting tweets
 gem 'twitter'
 
+# Use Font-Awesome for displaying oddles of icons
+gem 'font-awesome-sass', '~> 4.5.0'
+
 group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
