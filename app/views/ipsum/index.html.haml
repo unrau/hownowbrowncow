@@ -8,6 +8,11 @@
 
   = form_for :ipsum_generator do |f|
 
+    -# Format of @default_options is [int, str, bool]
+      int  = number of paragraphs
+      str  = length of paragraphs, either 'short', 'medium', or 'long'
+      bool = whether the generated text starts with 'Chocolate Milk Ipsum'
+
     %strong
       Paragraph Size
     = f.select 'paragraph_size', options_for_select(['short', 'medium', 'long'], @default_options[1])
