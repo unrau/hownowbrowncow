@@ -1,6 +1,26 @@
 class IpsumController < ApplicationController
 
   def index
+    @ipsum = "<center><p>Fill in the options above and click 'Generate'.</p></center>"
+    if session[:new_ipsum]
+      @ipsum = session[:new_ipsum]
+      session[:new_ipsum] = nil
+    end
+  end
+
+  def generate
+    param = params[:ipsum_generator]
+    p_num_paragraphs = param['num_paragraphs'].to_i
+    p_paragraph_size = param['paragraph_size'].to_s
+    p_start_with_default = true
+    if param['start_with_default'] == 'false'
+      p_start_with_default = false
+    end
+    #TODO: Session variable creates a cookie which can only hold 4kb — find another way to pass this data to the index action
+    session[:new_ipsum] = generate_ipsum(p_num_paragraphs, p_paragraph_size, p_start_with_default)
+    redirect_to(:controller => 'ipsum', :action => 'index')
+  end
+
   private
 
   def generate_ipsum(paragraphs, length, start_with_default = true)

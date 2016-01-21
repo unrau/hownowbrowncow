@@ -1,6 +1,30 @@
 
 - provide(:title, "Chocolate Milk Ipsum")
 
-%h4 Chocolate Milk Ipsum
+%center
+  %h2 Chocolate Milk Ipsum
 
-= generate_ipsum(5, 'medium', true).html_safe
+#chocolate-milk-ipsum-form
+
+  = form_for :ipsum_generator do |f|
+
+    = f.label 'Paragraph Size'
+    = f.select 'paragraph_size', options_for_select(['short', 'medium', 'long'])
+
+    %p
+
+    = f.label 'Number of Paragraphs'
+    = f.text_field 'num_paragraphs', class: 'text_field', style: 'width: 50px'
+
+    %p
+
+    = f.label "Start with 'Chocolate milk ipsum'"
+    = f.check_box 'start_with_default', { checked: true }
+
+    %p
+
+    = f.submit 'Generate', class: 'button', onClick: 'request_ipsum()'
+
+#chocolate-milk-ipsum
+
+  = @ipsum.html_safe

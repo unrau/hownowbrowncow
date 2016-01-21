@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   # Routes
   get    'about'                => 'about#index'
+
   get    'chocolate-milk-ipsum' => 'ipsum#index'
+  post   'chocolate-milk-ipsum' => 'ipsum#generate'
+
   get    'login'                => 'sessions#new'
   post   'login'                => 'sessions#create'
   delete 'logout'               => 'sessions#destroy'
