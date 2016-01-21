@@ -36,6 +36,9 @@ class IpsumController < ApplicationController
     # 'long'
     #
 
+    # Options
+    max_paragraph_num = 20
+
     # This is the main list of words to be placed randomly into the paragraphs
     ipsum_words = [
       'chocolate',
@@ -102,6 +105,12 @@ class IpsumController < ApplicationController
     # Allow choice of whether ipsum starts with default text
     if start_with_default
       ipsum.concat 'Chocolate milk ipsum'
+    end
+
+    # Limit the amount of paragraphs to the maximum
+    if paragraphs > max_paragraph_num
+      paragraphs = max_paragraph_num
+      ipsum = "<center><p style='font-size:0.7em;' class='col-red'>Result has been limited to #{max_paragraph_num} paragraphs.<em></em></p></center>#{ipsum}"
     end
 
     p_count = 0
