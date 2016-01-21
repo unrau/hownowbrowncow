@@ -1,7 +1,7 @@
 class IpsumController < ApplicationController
 
   def index
-    @ipsum = "<center><p>Fill in the options above and click 'Generate'.</p></center>"
+    @ipsum = "<center><p>Customize the options above and click 'Generate'.</p></center>"
     if session[:new_ipsum]
       @ipsum = session[:new_ipsum]
       session[:new_ipsum] = nil
