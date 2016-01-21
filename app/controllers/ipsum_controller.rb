@@ -119,7 +119,7 @@ class IpsumController < ApplicationController
       # Initialize a new paragraph
       par = ''
 
-      # Chose a random number of sentinces between the minimum and twice the minimum
+      # Chose a random number of sentences between the minimum and twice the minimum
       num_sentences = length_min + Random.rand(length_min)
 
       s_count = 0
