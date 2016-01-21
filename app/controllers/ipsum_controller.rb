@@ -26,6 +26,10 @@ class IpsumController < ApplicationController
   def generate_ipsum(paragraphs, length, start_with_default = true)
     # Generate HTML paragraphs from listed words chosen at random
     #
+    # Version 1.1
+    # Created by Ceres Unrau for Chocolate Milk Ipsum
+    # Feel free to use with citation. If you use it, I'd love to know <3 ceres@unrau.me
+    #
     # Valid lengths are the following strings:
     # 'short'
     # 'medium'
@@ -45,16 +49,38 @@ class IpsumController < ApplicationController
       'creamy',
       'sweet',
       'rich',
-      'chocolaty'
+      'chocolaty',
+      'milky',
+      'home made',
+      'perfect',
+      'syrup',
+      'chocolate milk',
+      'taste'
     ]
 
-    # This is a list of rare words that have only 1 in 100 chance of appearing
+    # This is a list of rare words that have only 1 in 50 chance of appearing
     rare_words = [
       'nectar of the gods',
-      'the one true',
-      'ipsum',
+      'the one true chocolate milk',
       'yum yum',
-      'tastes like'
+      'favourite',
+      'craving',
+      'sinful',
+      'wow'
+    ]
+
+    # This is a list of words that exist to make sentences sound more natural
+    natural_words = [
+      'and',
+      'with',
+      'very',
+      'absolutely',
+      'to',
+      'for',
+      'in',
+      'this',
+      'is',
+      'like'
     ]
 
     # Set the minimum number of sentences per paragraph based on the length parameter
@@ -93,10 +119,20 @@ class IpsumController < ApplicationController
           # Initialize a new word
           new_word = ''
 
-          # A random word is selected that can sometimes be a rare word
-          if Random.rand(100) == 1
+          # A random word is seldom selected from the rare word list
+          if Random.rand(50) == 1
             new_word = rare_words[Random.rand(rare_words.size)]
+          # A random word is sometimes selected from the natural sentence word list,
+          # as long as the previous word is not one of these words
+          elsif Random.rand(10) == 1 && !natural_words.include?(par.split.last)
+            new_word = natural_words[Random.rand(natural_words.size)]
+          # A random word is selected from the main word list
           else
+            new_word = ipsum_words[Random.rand(ipsum_words.size)]
+          end
+
+          # Eliminate duplicate consecutive words
+          while new_word == par.split.last
             new_word = ipsum_words[Random.rand(ipsum_words.size)]
           end
 
@@ -115,7 +151,8 @@ class IpsumController < ApplicationController
           end
 
           # Words can sometimes be followed by a comma to simulate a typcial sentence structure
-          if Random.rand(10) == 1
+          # Words in the natural sentence list cannot be followed by a comma.
+          if Random.rand(10) == 1 && !natural_words.include?(new_word.strip)
             new_word.concat ','
           end
 
@@ -123,6 +160,12 @@ class IpsumController < ApplicationController
           par.concat new_word
 
           w_count += 1
+        end
+
+        # Ensure the new sentence does not end with one of the natural sentence words
+        while natural_words.include?(par.split.last)
+          bad_word = par.split.last
+          par = par[0..-(bad_word.size + 2)]
         end
 
         # Ensure the new sentence ends with a period, replacing any ending comma
