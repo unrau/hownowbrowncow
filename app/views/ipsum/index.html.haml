@@ -2,7 +2,7 @@
 - provide(:title, "Chocolate Milk Ipsum")
 
 %center
-  %h2 Chocolate Milk Ipsum
+  %h2{ :name => 'ipsum-top'} Chocolate Milk Ipsum
 
 #chocolate-milk-ipsum-form
 
@@ -31,7 +31,7 @@
 
     %p
 
-    = f.submit 'Generate', class: 'button', onClick: 'request_ipsum()'
+    = f.submit 'Generate', class: 'button'
 
 #chocolate-milk-ipsum
 
