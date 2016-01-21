@@ -11,7 +11,6 @@ class IpsumController < ApplicationController
   def generate
     param = params[:ipsum_generator]
     p_num_paragraphs = param['num_paragraphs'].to_i
-    p_paragraph_size = param['paragraph_size'].to_s
     p_paragraph_size = param['paragraph_size']
     if param['start_with_default'] == '0'
       p_start_with_default = false
