@@ -8,17 +8,20 @@
 
   = form_for :ipsum_generator do |f|
 
-    = f.label 'Paragraph Size'
+    %strong
+      Paragraph Size
     = f.select 'paragraph_size', options_for_select(['short', 'medium', 'long'])
 
     %p
 
-    = f.label 'Number of Paragraphs'
+    %strong
+      Number of Paragraphs
     = f.text_field 'num_paragraphs', value: 5, class: 'text_field', style: 'width: 50px'
 
     %p
 
-    = f.label "Start with 'Chocolate milk ipsum'"
+    %strong
+      Start with 'Chocolate milk ipsum'
     = f.check_box 'start_with_default', { checked: true }
 
     %p
