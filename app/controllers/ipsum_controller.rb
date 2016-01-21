@@ -12,9 +12,11 @@ class IpsumController < ApplicationController
     param = params[:ipsum_generator]
     p_num_paragraphs = param['num_paragraphs'].to_i
     p_paragraph_size = param['paragraph_size'].to_s
-    p_start_with_default = true
-    if param['start_with_default'] == 'false'
+    p_paragraph_size = param['paragraph_size']
+    if param['start_with_default'] == '0'
       p_start_with_default = false
+    else
+      p_start_with_default = true
     end
     # Pass the selected options to a cookie that the index action can read
     session[:new_ipsum] = [p_num_paragraphs, p_paragraph_size, p_start_with_default]
