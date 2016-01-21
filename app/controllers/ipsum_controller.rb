@@ -2,8 +2,10 @@ class IpsumController < ApplicationController
 
   def index
     @ipsum = "<center><p>Customize the options above and click 'Generate'.</p></center>"
+    @default_options = [5, 'medium', true]
     if session[:new_ipsum]
       @ipsum = generate_ipsum(session[:new_ipsum][0], session[:new_ipsum][1], session[:new_ipsum][2])
+      @default_options = session[:new_ipsum]
       session[:new_ipsum] = nil
     end
   end
