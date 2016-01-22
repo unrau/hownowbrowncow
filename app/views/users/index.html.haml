@@ -3,7 +3,9 @@
 
 #content-users
 
-  %h3 All Members
+  %h3
+    = icon 'users'
+    All Members
   - if logged_in? && current_user.admin?
     = link_to ("#{icon 'user-plus'} Add Member").html_safe, { :action => "new", :controller => "users" }, class: 'button'
 
@@ -15,8 +17,7 @@
 
     - @users.each do |u|
       .user
-        = show_gravatar u, 50
-        = link_to u.name, u
+        = link_to ("#{icon 'user'} #{u.name}").html_safe, u
 
     = will_paginate
 
