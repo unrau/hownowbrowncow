@@ -3,31 +3,47 @@
 
 #content-home
 
-  .full-column
+  .half-column
     %center
-      %h4 Coming Spring 2016
-      = image_tag "cmglory.png", :class => "circle-image"
+      #coming-soon
+        %h4 Coming Spring 2016
 
   .half-column
-
     %center
+
       %h4 Subscribe:
 
       %p.subscription
         %a{ :href => 'http://eepurl.com/bNoWMv', :class => %w(button sub-email) }
           = icon 'envelope'
           Email Updates
+
       %p.subscription
         %a{ :href => '#', :class => %w(button sub-youtube) }
           = icon 'youtube-play'
           YouTube Channel
 
   .half-column
-    %h4 The latest tweets (moos?) from #{link_to 'How Now Brown Cow', 'https://twitter.com/CMConnoisseur'}:
+    %center
 
-    - for tweet in @tweets do
+      %h4 Chocolate Milk Ipsum
+
       %p
-        = image_tag "logo.png", :class => "twitter-avatar"
-        = render_twitter(tweet.text)
+        Chocolate Milk Ipsum is a filler-text generator based on #{link_to 'Lorem Ipsum', 'http://lipsum.com'}. It generates chocolate milk-related nonsense paragraphs you can use as placeholder text.
+
+      %p
+        = link_to 'Go to Chocolate Milk Ipsum', {:controller => 'ipsum', :action => 'index'}, class: 'button'
+
+  .half-column
+    %center
+      %h4
+        The latest tweets (moos?) from
+        %br
+        #{link_to '@CMConnoisseur', 'https://twitter.com/CMConnoisseur'}:
+
+      - for tweet in @tweets do
+        %p.tweet
+          = image_tag "logo.png", :class => "twitter-avatar"
+          = render_twitter(tweet.text)
 
   .clearfix

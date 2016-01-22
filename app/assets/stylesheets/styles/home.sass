@@ -12,7 +12,8 @@ img.twitter-avatar
 
 .half-column
   display: inline-block
-  width: 49%
+  width: 45%
+  padding: 15px
   vertical-align: top
   margin-bottom: $section-bottom-margin
 
@@ -43,3 +44,22 @@ a.sub-youtube
   &:hover
     background-color: #ffffff
     color: #e52d27 !important
+
+#coming-soon
+  @include background-image("cmglory.png", 250px, 250px, left, top, no-repeat)
+  width: 250px
+  height: 100px
+  padding-top: 150px
+  margin: 0 auto
+  text-align: center
+  border-radius: 50%
+
+  h4
+    color: $col-milk
+    text-shadow: none !important
+
+.ipsum-button
+  margin-top: 140px
+
+p.tweet
+  text-align: left
