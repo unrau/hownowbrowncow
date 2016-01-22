@@ -38,19 +38,7 @@ class ApplicationController < ActionController::Base
 
     # Returns a given number of tweets from the Twitter client
     def tweets(num)
-      max_attempts = 3
-      num_attempts = 0
-      begin
-        num_attempts += 1
-        twitter.home_timeline.take(num)
-      rescue
-        if num_attempts <= max_attempts
-          sleep error.rate_limit.reset_in
-          retry
-        else
-          raise
-        end
-      end
+      twitter.home_timeline.take(num)
     end
 
     # Submits a given string as a tweet
