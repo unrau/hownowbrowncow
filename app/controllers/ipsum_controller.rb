@@ -29,7 +29,7 @@ class IpsumController < ApplicationController
     def generate_ipsum(paragraphs, length, start_with_default = true)
       # Generate HTML paragraphs from listed words chosen at random
       #
-      # Version 1.2
+      # Version 1.21
       # Created by Ceres Unrau for Chocolate Milk Ipsum
       # Feel free to use with citation. If you use it, I'd love to know <3 ceres@unrau.me
       #
