@@ -144,7 +144,8 @@ class IpsumController < ApplicationController
             end
 
             # Eliminate duplicate consecutive words
-            while new_word == par.split.last
+            last_word = par.split.last.to_s
+            while new_word.downcase == last_word.downcase
               new_word = ipsum_words[Random.rand(ipsum_words.size)]
             end
 
