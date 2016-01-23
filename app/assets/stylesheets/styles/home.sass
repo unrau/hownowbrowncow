@@ -27,7 +27,7 @@ img.twitter-avatar
     width: 100%
 
 .subscription
-  margin-top: 40px
+  margin-top: 30px
 
 a.sub-email
   background-color: rgba(0,0,0,0.1)
@@ -52,6 +52,22 @@ a.sub-facebook
   &:hover
     background-color: #ffffff
     color: #3b5998 !important
+
+a.sub-patreon
+  background-color: #1a2226
+  color: #ffffff !important
+
+  &:hover
+    background-color: #ffffff
+    color: #de2f15 !important
+
+  i.patreon-logo
+    width: 14px
+    height: 14px
+    @include background-image("patreon-sm.png", 14px, 14px, left, top, no-repeat)
+
+    &:before
+      content: ""
 
 #coming-soon
   @include background-image("cmglory.png", 250px, 250px, left, top, no-repeat)
