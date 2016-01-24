@@ -6,13 +6,11 @@
 
     %ul
       %li
-        = link_to "HOME", { :action => "index", :controller => "home" }
-      %li
-        = link_to ("#{icon 'star'} REVIEWS").html_safe, { :action => "index", :controller => "reviews" }
-      %li
-        = link_to ("#{icon 'list-ol'} RECIPES").html_safe, { :action => "index", :controller => "recipes" }
-      %li
-        = link_to "ABOUT & CONTACT", { :action => "index", :controller => "about" }
+        - if !logged_in?
+          = link_to ("#{icon 'sign-in'} LOG IN").html_safe, { :action => "new", :controller => "sessions" }
+        - else
+          = link_to ("#{icon 'sign-out'} LOG OUT").html_safe, logout_path, method: :delete
+
 
     Copyright &copy;#{Time.now.year} Ceres Unrau
 
