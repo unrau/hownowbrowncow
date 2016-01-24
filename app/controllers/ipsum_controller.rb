@@ -2,7 +2,7 @@ class IpsumController < ApplicationController
 
   def index
     @ipsum = "<center><p>Customize the options above and click 'Generate'.</p></center>"
-    @default_options = [5, 'medium', true]
+    @default_options = [5, 'random', true]
     if session[:new_ipsum]
       @ipsum = generate_ipsum(session[:new_ipsum][0], session[:new_ipsum][1], session[:new_ipsum][2])
       @default_options = session[:new_ipsum]
@@ -29,7 +29,7 @@ class IpsumController < ApplicationController
     def generate_ipsum(number_of_paragraphs, paragraph_length, start_with_default_text = true)
       # Generate HTML paragraphs from listed words chosen at random
       #
-      # Version 1.22
+      # Version 1.23
       # Created by Ceres Unrau for Chocolate Milk Ipsum
       # Feel free to use with citation. If you use it, I'd love to know <3 ceres@unrau.me
       #
@@ -37,6 +37,7 @@ class IpsumController < ApplicationController
       # 'short'
       # 'medium'
       # 'long'
+      # 'random'
       #
 
       # DEVELOPER OPTIONS
@@ -45,9 +46,9 @@ class IpsumController < ApplicationController
       # Set the default text string
       default_text_string = "Chocolate milk"
       # Set the base number of sentences for each valid length
-      min_sentences_for_short_length  = 2
-      min_sentences_for_medium_length = 5
-      min_sentences_for_long_length   = 10
+      $MIN_SENTENCES_FOR_SHORT_LENGTH  = 2
+      $MIN_SENTENCES_FOR_MEDIUM_LENGTH = 5
+      $MIN_SENTENCES_FOR_long_LENGTH   = 10
 
       # This is the main list of words to be placed randomly into the paragraphs
       common_words = [
@@ -101,17 +102,26 @@ class IpsumController < ApplicationController
         return list[Random.rand(list.size)].to_s
       end
 
+      # Define a method that returns a random valid paragraph length
+      def return_random_paragraph_length()
+        valid_lengths = [$MIN_SENTENCES_FOR_SHORT_LENGTH,
+                         $MIN_SENTENCES_FOR_MEDIUM_LENGTH,
+                         $MIN_SENTENCES_FOR_long_LENGTH]
+        return valid_lengths[Random.rand(valid_lengths.size)]
+      end
+
       # Set the minimum number of sentences per paragraph based on the length parameter
       length_min = 0
       case paragraph_length.downcase
       when 'short'
-        length_min = min_sentences_for_short_length
+        length_min = $MIN_SENTENCES_FOR_SHORT_LENGTH
       when 'medium'
-        length_min = min_sentences_for_medium_length
+        length_min = $MIN_SENTENCES_FOR_MEDIUM_LENGTH
       when 'long'
-        length_min = min_sentences_for_long_length
+        length_min = $MIN_SENTENCES_FOR_long_LENGTH
+      when 'random'
       else
-        length_min = min_sentences_for_medium_length
+        length_min = $MIN_SENTENCES_FOR_MEDIUM_LENGTH
       end
 
       # Initialize the ipsum text
@@ -132,6 +142,11 @@ class IpsumController < ApplicationController
       for paragraph in (1..number_of_paragraphs)
         # Initialize a new paragraph
         par = ''
+
+        # If a random paragraph length is selected, choose a new random paragraph length
+        if paragraph_length.downcase == 'random'
+          length_min = return_random_paragraph_length()
+        end
 
         # Chose a random number of sentences between the minimum and twice the minimum
         num_sentences = length_min + Random.rand(length_min)
