@@ -8,17 +8,13 @@
   = form_for(:session, url: login_path) do |f|
 
     = f.label :email
-
     %br
-
     = f.email_field :email, class: 'form-control text_field'
 
     %p
 
     = f.label :password
-
     %br
-
     = f.password_field :password, class: 'form-control text_field'
 
     %p
