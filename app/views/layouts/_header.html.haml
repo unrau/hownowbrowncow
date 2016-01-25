@@ -42,12 +42,12 @@
   #nav-container
     %ul
       %li
-        = link_to "HOME", { :action => "index", :controller => "home" }
+        = link_to ("#{icon 'home'} HOME").html_safe, { :action => "index", :controller => "home" }
       %li
         = link_to ("#{icon 'star'} REVIEWS").html_safe, { :action => "index", :controller => "reviews" }
       %li
         = link_to ("#{icon 'list-ol'} RECIPES").html_safe, { :action => "index", :controller => "recipes" }
       %li
-        = link_to "ABOUT & CONTACT", { :action => "index", :controller => "about" }
+        = link_to ("#{icon 'info-circle'} ABOUT & CONTACT").html_safe, { :action => "index", :controller => "about" }
 
 #drip
