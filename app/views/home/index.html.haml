@@ -13,7 +13,9 @@
   .full-column
     %center
 
-      %h4 Get Notified:
+      %h4
+        = icon 'bell'
+        Get Notified:
 
       %p.subscription
         %a{ :href => 'http://eepurl.com/bNoWMv', :class => %w(button sub-email) }
@@ -38,17 +40,20 @@
   .half-column
     %center
 
-      %h4 Chocolate Milk Ipsum
+      %h4
+        = icon 'align-left'
+        Chocolate Milk Ipsum
 
       %p
         Chocolate Milk Ipsum is a text generator based on #{link_to 'Lorem Ipsum', 'http://lipsum.com'}. It generates chocolate milk-related nonsense paragraphs which you can use as placeholder text.
 
       %p
-        = link_to 'Go to Chocolate Milk Ipsum', {:controller => 'ipsum', :action => 'index'}, class: 'button'
+        = link_to ("#{icon 'align-left'} Chocolate Milk Ipsum").html_safe, {:controller => 'ipsum', :action => 'index'}, class: 'button'
 
   .half-column
     %center
       %h4
+        = icon 'twitter'
         The latest tweets (moos?) from
         %br
         #{link_to '@CMConnoisseur', 'https://twitter.com/CMConnoisseur'}:
