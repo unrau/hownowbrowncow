@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # Root Route
-  root 'home#index'
+  root 'static_pages#home'
 
   # Routes
-  get    'about'                => 'about#index'
+  get    'about'                => 'static_pages#about'
 
   get    'chocolate-milk-ipsum' => 'ipsum#index'
   post   'chocolate-milk-ipsum' => 'ipsum#generate'
