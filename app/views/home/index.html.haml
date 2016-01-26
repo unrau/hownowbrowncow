@@ -53,10 +53,16 @@
       %br
       = link_to '@CMConnoisseur', 'https://twitter.com/CMConnoisseur'
 
-    - for tweet in @tweets do
-      %p.tweet
-        = image_tag "logo.png", :class => "twitter-avatar"
-        = render_twitter(tweet.text)
+    - if @tweets == nil
+      %p.col-red
+        Woah, Twitter overload!
+        %br
+        Try again in a few minutes, or click the link above to see the tweets (moos?) directly on Twitter.
+    - else
+      - for tweet in @tweets do
+        %p.tweet
+          = image_tag "logo.png", :class => "twitter-avatar"
+          = render_twitter(tweet.text)
 
   .full-column
     #introduction

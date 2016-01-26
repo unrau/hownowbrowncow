@@ -27,23 +27,36 @@ class ApplicationController < ActionController::Base
 
     # Returns a Twitter client
     def twitter()
-      client = Twitter::REST::Client.new do |config|
-        config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
-        config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
-        config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
-        config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
+      begin
+        client = Twitter::REST::Client.new do |config|
+          config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
+          config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
+          config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+          config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
+        end
+        return client
+      rescue
+        # Do nothing if there is a problem with Twitter
       end
-      return client
     end
 
     # Returns a given number of tweets from the Twitter client
+    # If there is a problem with twitter, like too many requests, return Nil instead
     def tweets(num)
-      twitter.home_timeline.take(num)
+      begin
+        return twitter.home_timeline.take(num)
+      rescue
+        return nil
+      end
     end
 
     # Submits a given string as a tweet
     def tweet(chirp)
-      twitter.update(chirp)
+      begin
+        twitter.update(chirp)
+      rescue
+        # Do nothing if there is a problem with Twitter
+      end
     end
 
 end
