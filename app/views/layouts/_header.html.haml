@@ -8,7 +8,7 @@
     #cmc-container
       %span.by-the from the
       %br
-      = link_to "Chocolate Milk Connoisseur", { :action => "about", :controller => "static_pages" }, :class => "cmc"
+      = link_to "Chocolate Milk Connoisseur", about_url, :class => "cmc"
 
 #sub-header
   #sub-header-container
@@ -42,12 +42,12 @@
   #nav-container
     %ul
       %li
-        = link_to ("#{icon 'home'} HOME").html_safe, { :action => "home", :controller => "static_pages" }
+        = link_to ("#{icon 'home'} HOME").html_safe, root_url
       %li
         = link_to ("#{icon 'star'} REVIEWS").html_safe, { :action => "index", :controller => "reviews" }
       %li
         = link_to ("#{icon 'list-ol'} RECIPES").html_safe, { :action => "index", :controller => "recipes" }
       %li
-        = link_to ("#{icon 'info-circle'} ABOUT & CONTACT").html_safe, { :action => "about", :controller => "static_pages" }
+        = link_to ("#{icon 'info-circle'} ABOUT & CONTACT").html_safe, about_url
 
 #drip
