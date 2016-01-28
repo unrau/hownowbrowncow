@@ -45,4 +45,5 @@
 
       = render 'layouts/footer'
 
-      = render 'layouts/analytics'
+      - if Rails.env.production?
+        = render 'layouts/analytics'
