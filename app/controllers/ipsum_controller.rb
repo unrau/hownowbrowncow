@@ -97,12 +97,12 @@ class IpsumController < ApplicationController
         'like'
       ]
 
-      # Define a method that returns a random word from a given list
+      # Return a random word from a given list
       def return_random_word_from_list(list)
         return list[Random.rand(list.size)].to_s
       end
 
-      # Define a method that returns a random valid paragraph length
+      # Return a random valid paragraph length
       def return_random_paragraph_length()
         valid_lengths = [$MIN_SENTENCES_FOR_SHORT_LENGTH,
                          $MIN_SENTENCES_FOR_MEDIUM_LENGTH,
