@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
     # If there is a problem with twitter, like too many requests, return Nil instead
     def tweets(num)
       begin
-        return twitter.home_timeline.take(num)
+        return twitter.user_timeline.take(num)
       rescue
         return nil
       end
